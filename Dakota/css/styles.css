@@ -148,6 +148,9 @@ body{
     border: #a3a7a7 1px solid;
     margin-right: 10px;
   }
+  .btn_filter a{
+      text-decoration: none;
+  }
   .btn_filter:hover{
       color: #3EBFBF;
       border: #3EBFBF 1px solid;
