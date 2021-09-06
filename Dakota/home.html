@@ -8,40 +8,43 @@
 </head>
 <body>
     <div class="wrapper">
-        <Menu class="sidebar">
+        <aside class="sidebar">
             <div class="label">
                 <img class="logo" src="img/logo.jpg" alt="logo" width="40dp" height="40dp">
                 <h3>Dakota</h3>
             </div>  
             <ul>
-                <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
-                <li><a href="#"><i class="fas fa-archive"></i>Product</a></li>
-                <li><a href="#"><i class="fas fa-exchange-alt"></i>Order</a></li>
-                <li><a href="#"><i class="fas fa-comment-dots"></i>Chat</a></li>
-                <li><a href="#"><i class="fas fa-file"></i>Special Pages</a></li>
-                <li><a href="#"><i class="fas fa-copy"></i>Documentation</a></li>
-                <li><a href="#"><i class="fas fa-layer-group"></i>Multilevel</a></li>
+                <li><a href="#"><i class="fas fa-home fa-lg"></i>Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-archive fa-lg"></i>Product</a></li>
+                <li><a href="#"><i class="fas fa-exchange-alt fa-lg"></i>Order</a></li>
+                <li><a href="#"><i class="fas fa-comment-dots fa-lg"></i>Chat</a></li>
+                <li><a href="#"><i class="fas fa-file fa-lg"></i>Special Pages</a></li>
+                <li><a href="#"><i class="fas fa-copy fa-lg"></i>Documentation</a></li>
+                <li><a href="#"><i class="fas fa-layer-group fa-lg"></i>Multilevel</a></li>
             </ul>
             <div class="sidebar_bottom">
                 <ul>
-                    <li><a href="#"><i class="fas fa-cog"></i>Settings</a></li>
-                <li><a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                    <li><a href="#"><i class="fas fa-cog fa-lg"></i>Settings</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt fa-lg"></i>Logout</a></li>
                 </ul>
             </div>
-         </Menu>
+         </aside>
          <div class="main_content">
              <header class="header">
                 <h3><b>Product</b></h3>
                 <div class="profile">
-                    <!-- <p><i class="fas fa-search"></i> Beatrice Nakabanda</p> -->
-                    <p>Beatrice Nakabanda</p>
+                    <a href="#"><i class="fa fa-search fa-lg" id="search"></i></a>
+                    <a href="#"><i class="far fa-bell fa-lg" id="bell"></i></a>
+                    <img src="img/baby.jpg" alt="logo" width="40dp" height="40dp">
+                    <p><b>Beatrice Nakabanda</b></p>
                 </div>
              </header>
              <section class="content">
-                 <div class="table_head">
+                 <nav class="table_head">
                     <p>List Product</p>
                     <button class="btn"><i class="fa fa-plus"></i> Add Product</button>
-                 </div>
+                    <button class="btn_filter"><i class="fa fa-sort-amount-down"></i> Filter</button>
+                 </nav>
                  <table table table-striped table-class style="width:100%">
                     <thead>
                         <td class="thead"><input type="checkbox" id="product" name="product type" value="productType"></td>
@@ -53,6 +56,7 @@
                         <td class="thead">PRICE</td>
                         <td class="thead">STATUS</td>
                     </thead>
+                    <tbody>
                     <tr class="row">
                         <td><input type="checkbox" id="product1" name="product type" value="productType"></td>
                         <td><img src="img/furniture.jpg" alt="" width="50dp" height="50dp"></td>
@@ -142,8 +146,8 @@
                             <p id="active"><i class="fa fa-check-circle" ></i> Active</p><br>3k views in a day
                         </td>
                     </tr>
-                  </table>
-
+                </tbody>
+            </table>
                   <div class="footer">
                       <div class="entries">
                           <p>Showing 1 to 5 of 25 entries</p>
