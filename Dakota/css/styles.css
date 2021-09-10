@@ -16,7 +16,7 @@ body{
     position: relative;
 }
 .wrapper .sidebar{
-    position: absolute;
+    /* position: absolute; */
     width: 200px;
     height: 100%;
     background: #FFF;
@@ -130,7 +130,6 @@ body{
     color: white;
     padding: 7px 14px;
     cursor: pointer;
-    float: right;
     border: #3EBFBF 1px solid;
   }
   
@@ -139,7 +138,6 @@ body{
     color: #3EBFBF;
   }
   .btn_filter{
-    float: right;
     padding: 7px 14px;
     cursor: pointer;
     border-radius: 10px;
@@ -220,11 +218,18 @@ only screen and (max-width: 980px){
     table, .thead, tbody, td, tr {
         font-size: x-small;
     }
+    .wrapper .main_content .content table{
+        display: block;
+    }
 }
 @media 
 only screen and (max-width: 240px){
+    
+}
+@media 
+only screen and (max-width: 147.76px){
     .wrapper .sidebar{
-       display: inline;
+        display: none !important;
     }
 }
 @media 
