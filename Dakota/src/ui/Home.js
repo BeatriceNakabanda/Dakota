@@ -8,7 +8,7 @@ import { faSearch, faBell, faPlus, faSortAmountDown } from '@fortawesome/free-so
 import ProductListItem from './ProductListItem';
 
 const Home = () => {
-    const { data: products, isLoading, error} = useFetch('http://localhost:3001/products');
+    const { data: products, isLoading, error} = useFetch('/products');
 
     return ( 
         <div className="wrapper">
