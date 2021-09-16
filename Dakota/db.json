@@ -68,18 +68,5 @@
         }
 
     ],
-    "users": [
-        {
-            "name": "Jesse Jackson",
-            "id": 1
-        },
-        {
-            "name": "John Doe",
-            "id": 2
-        },
-        {
-            "name": "Jessy Jesca",
-            "id": 3
-        }
-    ]
+
 }
