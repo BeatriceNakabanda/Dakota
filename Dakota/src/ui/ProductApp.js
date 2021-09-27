@@ -1,8 +1,7 @@
 import { CssBaseline, makeStyles } from "@material-ui/core";
 import Header from "../components/Header";
 import SideMenu from "../components/SideMenu";
-import Products from "./Products";
-import SideBar from "../components/SideBar";
+import Products from "../components/Products";
 
 const useStyles = makeStyles({
     appMain: {

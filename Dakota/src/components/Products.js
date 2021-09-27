@@ -1,7 +1,7 @@
 import { Box, Grid, Paper } from "@material-ui/core";
 import { DataGrid } from "@material-ui/data-grid";
 import { styled, makeStyles } from "@material-ui/styles";
-import useFetch from "./useFetch";
+import useFetch from "../ui/useFetch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faSortAmountDown } from "@fortawesome/free-solid-svg-icons";
 import theme from "../theme/theme";
@@ -40,6 +40,9 @@ const useStyles = makeStyles({
   title: {
     fontSize: "15px",
     color: "#505253"
+  },
+  dataTable: {
+    fontSize: "12px"
   }
 });
 
@@ -48,12 +51,12 @@ const Products = () => {
   const { data: products, isLoading, error } = useFetch("/products");
   const columns = [
     { field: "name", headerName: "NAME", width: 150 },
-    { field: "code", headerName: "CODE", width: 150 },
-    { field: "type", headerName: "TYPE", width: 150 },
-    { field: "date", headerName: "DATE", width: 150 },
-    { field: "price", headerName: "PRICE", width: 150 },
+    { field: "code", headerName: "CODE", width: 130 },
+    { field: "type", headerName: "TYPE", width: 130 },
+    { field: "date", headerName: "DATE", width: 130 },
+    { field: "price", headerName: "PRICE", width: 120 },
     { field: "status", headerName: "STATUS", width: 150 },
-    { field: "code", headerName: "CODE", width: 150 },
+    { field: "code", headerName: "CODE", width: 120 },
     { field: "views", headerName: "DATE", width: 150 },
   ];
 
@@ -73,14 +76,15 @@ const Products = () => {
           </div>
         </Box>
         {products && (
-          <Box component="main" sx={{ flexGrow: 1, p: 3 }} classes={classes.dataTable}>
+          <Box component="main" sx={{ flexGrow: 1, p: 3 }} >
             <DataGrid
-              style={{ height: 400, width: "100%" }}
+              style={{ fontSize: "12px", height: 400, width: "100%" }}
               rows={products}
               columns={columns}
               pageSize={5}
               rowsPerPageOptions={[5]}
               checkboxSelection
+              classes={classes.dataTable}
             />
           </Box>
         )}

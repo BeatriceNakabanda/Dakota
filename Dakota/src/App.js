@@ -1,7 +1,7 @@
 import { BrowserRouter as Router,  } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core';
 import theme from './theme/theme';
-import Products from './ui/Products';
+import Products from './components/Products';
 import Home from './ui/Home';
 import ProductApp from './ui/ProductApp';
 
