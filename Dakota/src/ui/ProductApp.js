@@ -19,7 +19,6 @@ const ProductApp = () => {
     return ( 
         <>
             <SideMenu />
-            {/* <SideBar /> */}
             <div className={classes.appMain}>
             <Header />
             <Products />
