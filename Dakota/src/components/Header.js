@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <div>
-      <AppBar position="static" className={classes.root}>
+      <AppBar position="static" className={classes.root} elevation={0}>
         <Toolbar>
           <Grid container>
             <Grid item className={classes.title}>Product</Grid>

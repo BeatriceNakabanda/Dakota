@@ -10,7 +10,9 @@ const useStyles = makeStyles({
   mainSection: {
     margin: theme.spacing(3),
     padding: theme.spacing(2),
-    
+    '$ .MuiDataGrid-columnHeaderTitle': {
+      backgroundColor: 'rgba(255, 7, 0, 0.55)',
+    }
   },
   contentHeader: {
     display: "flex",
@@ -42,7 +44,7 @@ const useStyles = makeStyles({
     color: "#505253"
   },
   dataTable: {
-    fontSize: "12px"
+    border: 0
   }
 });
 
@@ -50,18 +52,18 @@ const Products = () => {
   const classes = useStyles();
   const { data: products, isLoading, error } = useFetch("/products");
   const columns = [
-    { field: "name", headerName: "NAME", width: 150 },
-    { field: "code", headerName: "CODE", width: 130 },
-    { field: "type", headerName: "TYPE", width: 130 },
-    { field: "date", headerName: "DATE", width: 130 },
+    { field: "name", headerName: "NAME", width: 130},
+    { field: "code", headerName: "CODE",  width: 150},
+    { field: "type", headerName: "TYPE", width: 130},
+    { field: "date", headerName: "DATE", width: 130},
     { field: "price", headerName: "PRICE", width: 120 },
-    { field: "status", headerName: "STATUS", width: 150 },
-    { field: "code", headerName: "CODE", width: 120 },
-    { field: "views", headerName: "DATE", width: 150 },
+    { field: "status", headerName: "STATUS", width: 120  },
+    { field: "code", headerName: "CODE", width: 130 },
+    { field: "views", headerName: "STATUS",  width: 130 },
   ];
 
   return (
-      <Paper className={classes.mainSection} elevetion="0" square>
+      <Paper className={classes.mainSection} square>
         <Box className={classes.contentHeader} >
           <div className={classes.title}>
             <p>List Product</p>
@@ -76,17 +78,16 @@ const Products = () => {
           </div>
         </Box>
         {products && (
-          <Box component="main" sx={{ flexGrow: 1, p: 3 }} >
-            <DataGrid
-              style={{ fontSize: "12px", height: 400, width: "100%" }}
+          <DataGrid
+              className={classes.dataTable}
+              style={{ fontSize: "12px", height: 400, width: "100%", border: 0, fontStyle: "bold" }}
               rows={products}
               columns={columns}
               pageSize={5}
               rowsPerPageOptions={[5]}
               checkboxSelection
-              classes={classes.dataTable}
+              elevation={0}
             />
-          </Box>
         )}
       </Paper>
   );
