@@ -6,6 +6,7 @@ import {
   ListItemIcon,
   ListItemText,
   Link,
+  Drawer,
 } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -31,6 +32,11 @@ const useStyles = makeStyles({
     width: "250px",
     height: "100%",
     backgroundColor: "#FFF",
+    flexShrink: 0,
+        "& .MuiDrawer-paper": {
+          width: "250px",
+          boxSizing: "border-box",
+        }
   },
   container: {
     "$ .MuiListItemIcon-root": {
@@ -38,10 +44,13 @@ const useStyles = makeStyles({
       backgroundColor: "red",
     },
   },
+  links: {
+    paddingTop: "30px",
+  },
   link: {
-    padding: "17px",
+    // padding: "17px",
     color: "#7d7e80",
-    display: "block",
+    // display: "block",
   },
   logo: {
     paddingLeft: "0px",
@@ -49,84 +58,32 @@ const useStyles = makeStyles({
   },
   title: {
     paddingLeft: "20px",
+    color: "#3a5f79",
   },
   linksFooter: {
-    paddingBottom: "25px"
-  }
+    paddingBottom: "25px",
+  },
 });
+
+const drawerWidth = 250;
 
 const SideMenu = () => {
   const classes = useStyles();
   return (
     <div className={classes.sideMenu}>
-      <Grid container>
-      <div className="links">
-      <List>
-            <ListItem>
-                <img src={company_pic} alt="logo" className={classes.logo} width="40dp" height="40dp" />
-                <h3 className={classes.title}>Dakota</h3>
-            </ListItem>
-            <ListItem>
-                <ListItemIcon>
-                    <FontAwesomeIcon icon={faHome} className="fas" />
-                </ListItemIcon>
-                <ListItemText primary="Dashboard" />     
-            </ListItem>
-            <ListItem>
-                <ListItemIcon>
-                    <FontAwesomeIcon icon={faArchive} className="fas" />
-                </ListItemIcon>
-                <ListItemText primary="Product" />     
-            </ListItem>
-            <ListItem>
-                <ListItemIcon>
-                    <FontAwesomeIcon icon={faExchangeAlt} className="fas" />
-                </ListItemIcon>
-                <ListItemText primary="Order" />     
-            </ListItem>
-            <ListItem>
-                <ListItemIcon>
-                    <FontAwesomeIcon icon={faCommentDots} className="fas" />
-                </ListItemIcon>
-                <ListItemText primary="Chat" />     
-            </ListItem>
-            <ListItem>
-                <ListItemIcon>
-                    <FontAwesomeIcon icon={faFile} className="fas" />
-                </ListItemIcon>
-                <ListItemText primary="Special Pages" />     
-            </ListItem>
-            <ListItem>
-                <ListItemIcon>
-                    <FontAwesomeIcon icon={faCopy} className="fas" />
-                </ListItemIcon>
-                <ListItemText primary="Documentation" />     
-            </ListItem>
-            <ListItem>
-                <ListItemIcon>
-                    <FontAwesomeIcon icon={faLayerGroup} className="fas" />
-                </ListItemIcon>
-                <ListItemText primary="Multilevel" />     
-            </ListItem>
-            </List>
-            </div>
-            <div className="links_footer">
-            <List>
-            <ListItem>
-                <ListItemIcon>
-                    <FontAwesomeIcon icon={faCog} className="fas" />
-                </ListItemIcon>
-                <ListItemText primary="Settings" />     
-            </ListItem>
-            <ListItem>
-                <ListItemIcon>
-                    <FontAwesomeIcon icon={faSignOutAlt} className="fas" />
-                </ListItemIcon>
-                <ListItemText primary="Logout" />     
-            </ListItem>
-            </List>
-            </div>
-        {/* <List>
+      <Drawer
+        sx={{
+          width: "250px",
+          flexShrink: 0,
+          "& .MuiDrawer-paper": {
+            width: "250px",
+            boxSizing: "border-box",
+          },
+        }}
+        variant="permanent"
+        anchor="left"
+      >
+        <List>
           <ListItem>
             <img
               src={company_pic}
@@ -137,66 +94,68 @@ const SideMenu = () => {
             />
             <h3 className={classes.title}>Dakota</h3>
           </ListItem>
-          <ListItem>
-            <Link className={classes.link} to="/">
-              <FontAwesomeIcon icon={faHome} className="fas" />
-              Dashboard
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link className={classes.link} to="/">
-              <FontAwesomeIcon icon={faArchive} className="fas" />
-              Product
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link className={classes.link} to="/">
-              <FontAwesomeIcon icon={faExchangeAlt} className="fas" />
-              Order
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link className={classes.link} to="/">
-              <FontAwesomeIcon icon={faCommentDots} className="fas" />
-              Chat
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link className={classes.link} to="/">
-              <FontAwesomeIcon icon={faFile} className="fas" />
-              Special Pages
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link className="link" to="/">
-              <FontAwesomeIcon icon={faCopy} className="fas" />
-              Documentation
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link className={classes.link} to="/">
-              <FontAwesomeIcon icon={faLayerGroup} className="fas" />
-              Multilevel
-            </Link>
-          </ListItem>
+          <div className={classes.links}>
+            <ListItem className={classes.link}>
+              <ListItemIcon>
+                <FontAwesomeIcon icon={faHome} className="fas" />
+              </ListItemIcon>
+              <ListItemText primary="Dashboard" />
+            </ListItem>
+            <ListItem className={classes.link}>
+              <ListItemIcon>
+                <FontAwesomeIcon icon={faArchive} className="fas" />
+              </ListItemIcon>
+              <ListItemText primary="Product" />
+            </ListItem>
+            <ListItem className={classes.link}>
+              <ListItemIcon>
+                <FontAwesomeIcon icon={faExchangeAlt} className="fas" />
+              </ListItemIcon>
+              <ListItemText primary="Order" />
+            </ListItem>
+            <ListItem className={classes.link}>
+              <ListItemIcon>
+                <FontAwesomeIcon icon={faCommentDots} className="fas" />
+              </ListItemIcon>
+              <ListItemText primary="Chat" />
+            </ListItem>
+            <ListItem className={classes.link}>
+              <ListItemIcon>
+                <FontAwesomeIcon icon={faFile} className="fas" />
+              </ListItemIcon>
+              <ListItemText primary="Special Pages" />
+            </ListItem>
+            <ListItem className={classes.link}>
+              <ListItemIcon>
+                <FontAwesomeIcon icon={faCopy} className="fas" />
+              </ListItemIcon>
+              <ListItemText primary="Documentation" />
+            </ListItem>
+            <ListItem className={classes.link}>
+              <ListItemIcon>
+                <FontAwesomeIcon icon={faLayerGroup} className="fas" />
+              </ListItemIcon>
+              <ListItemText primary="Multilevel" />
+            </ListItem>
+          </div>
         </List>
         <div className="links_footer">
-        <List>
-          <ListItem>
-            <Link className={classes.link} to="/">
-              <FontAwesomeIcon icon={faCog} className="fas" />
-              Settings
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link className={classes.link} to="/">
-              <FontAwesomeIcon icon={faSignOutAlt} className="fas" />
-              Logout
-            </Link>
-          </ListItem>
-        </List> 
-        </div> */}
-      </Grid>
+          <List>
+            <ListItem className={classes.link}>
+              <ListItemIcon>
+                <FontAwesomeIcon icon={faCog} className="fas" />
+              </ListItemIcon>
+              <ListItemText primary="Settings" />
+            </ListItem>
+            <ListItem className={classes.link}>
+              <ListItemIcon>
+                <FontAwesomeIcon icon={faSignOutAlt} className="fas" />
+              </ListItemIcon>
+              <ListItemText primary="Logout" />
+            </ListItem>
+          </List>
+        </div>
+      </Drawer>
     </div>
   );
 };

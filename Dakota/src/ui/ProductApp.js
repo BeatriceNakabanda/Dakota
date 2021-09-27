@@ -2,6 +2,7 @@ import { CssBaseline, makeStyles } from "@material-ui/core";
 import Header from "../components/Header";
 import SideMenu from "../components/SideMenu";
 import Products from "./Products";
+import SideBar from "../components/SideBar";
 
 const useStyles = makeStyles({
     appMain: {
@@ -18,6 +19,7 @@ const ProductApp = () => {
     return ( 
         <>
             <SideMenu />
+            {/* <SideBar /> */}
             <div className={classes.appMain}>
             <Header />
             <Products />
