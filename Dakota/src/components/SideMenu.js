@@ -32,17 +32,22 @@ const useStyles = makeStyles({
     width: "250px",
     height: "100%",
     backgroundColor: "#FFF",
+    fontSize: "18px",
     flexShrink: 0,
         "& .MuiDrawer-paper": {
           width: "250px",
           boxSizing: "border-box",
-        }
+        },
   },
   container: {
     "$ .MuiListItemIcon-root": {
       paddingLeft: "20px",
       backgroundColor: "red",
     },
+    "$ .MuiPaper-elevation0": {
+        paddingBottom: "0px",
+        marginBottom: "0px"
+    }
   },
   links: {
     paddingTop: "30px",
@@ -63,6 +68,11 @@ const useStyles = makeStyles({
   linksFooter: {
     paddingBottom: "25px",
   },
+  label: {
+    display: "flex",
+    alignItems: "center"
+  },
+
 });
 
 const drawerWidth = 250;
@@ -71,6 +81,7 @@ const SideMenu = () => {
   const classes = useStyles();
   return (
     <div className={classes.sideMenu}>
+    <div className="MuiListItemIcon-root">
       <Drawer
         sx={{
           width: "250px",
@@ -84,6 +95,8 @@ const SideMenu = () => {
         anchor="left"
       >
         <List>
+        <div>
+        <div className={classes.label}>
           <ListItem>
             <img
               src={company_pic}
@@ -94,6 +107,7 @@ const SideMenu = () => {
             />
             <h3 className={classes.title}>Dakota</h3>
           </ListItem>
+          </div>
           <div className={classes.links}>
             <ListItem className={classes.link}>
               <ListItemIcon>
@@ -138,8 +152,9 @@ const SideMenu = () => {
               <ListItemText primary="Multilevel" />
             </ListItem>
           </div>
+          </div>
         </List>
-        <div className="links_footer">
+        <div className={classes.linksFooter}>
           <List>
             <ListItem className={classes.link}>
               <ListItemIcon>
@@ -156,6 +171,7 @@ const SideMenu = () => {
           </List>
         </div>
       </Drawer>
+    </div>
     </div>
   );
 };
