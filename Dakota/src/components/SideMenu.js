@@ -40,10 +40,10 @@ const useStyles = makeStyles({
         },
   },
   container: {
-    "$ .MuiListItemIcon-root": {
-      paddingLeft: "20px",
-      backgroundColor: "red",
-    },
+    // "$ .MuiListItemIcon-root": {
+    //   paddingLeft: "20px",
+    //   backgroundColor: "red",
+    // },
     "$ .MuiPaper-elevation0": {
         paddingBottom: "0px",
         marginBottom: "0px"
@@ -69,6 +69,7 @@ const useStyles = makeStyles({
     paddingBottom: "25px",
   },
   label: {
+    paddingTop: "20px",
     display: "flex",
     alignItems: "center"
   },
@@ -81,15 +82,20 @@ const SideMenu = () => {
   const classes = useStyles();
   return (
     <div className={classes.sideMenu}>
-    <div className="MuiListItemIcon-root">
+    <div>
       <Drawer
         sx={{
           width: "250px",
           flexShrink: 0,
-          "& .MuiDrawer-paper": {
-            width: "250px",
-            boxSizing: "border-box",
-          },
+        //   "& .MuiDrawer-paper": {
+        //     // width: "250px",
+        //     // boxSizing: "border-box",
+        //     // color: "red"
+        //   },
+          "$ .MuiTypography-displayBlock": {
+              fontSize: "12px",
+              color: "red"
+          }
         }}
         variant="permanent"
         anchor="left"

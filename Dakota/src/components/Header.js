@@ -6,7 +6,8 @@ import profile_pic from "../img/baby.jpg";
 const useStyles = makeStyles( theme => ({
   root: {
     backgroundColor: "#E4F4F4",
-    color: "#3a5f79"
+    color: "#3a5f79",
+    paddingTop: "20px"
   },
   profile: {
     float: "right",

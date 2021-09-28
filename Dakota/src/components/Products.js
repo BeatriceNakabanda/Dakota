@@ -12,13 +12,16 @@ const useStyles = makeStyles({
     padding: theme.spacing(2),
     '$ .MuiDataGrid-columnHeaderTitle': {
       backgroundColor: 'rgba(255, 7, 0, 0.55)',
-    }
+    },
+    borderRadius: "8px",
+
   },
   contentHeader: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
+    paddingTop: "10px"
   },
   btnFilter: {
     height: "40px",
@@ -43,9 +46,7 @@ const useStyles = makeStyles({
     fontSize: "15px",
     color: "#505253"
   },
-  dataTable: {
-    border: 0
-  }
+ 
 });
 
 const Products = () => {
@@ -79,8 +80,15 @@ const Products = () => {
         </Box>
         {products && (
           <DataGrid
-              className={classes.dataTable}
-              style={{ fontSize: "12px", height: 400, width: "100%", border: 0, fontStyle: "bold" }}
+            rowHeight={80}
+              style={{ 
+                fontSize: "12px", 
+                height: 600, 
+                width: "100%", 
+                border: 0, 
+                paddingTop: "30px",
+                fontStyle: "bold" 
+                }}
               rows={products}
               columns={columns}
               pageSize={5}
