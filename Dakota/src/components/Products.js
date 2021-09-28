@@ -1,4 +1,4 @@
-import { Box, Grid, Paper } from "@material-ui/core";
+import { Box, Grid, Paper, Link } from "@material-ui/core";
 import { DataGrid } from "@material-ui/data-grid";
 import { styled, makeStyles } from "@material-ui/styles";
 import useFetch from "../ui/useFetch";
@@ -7,12 +7,17 @@ import { faPlus, faSortAmountDown } from "@fortawesome/free-solid-svg-icons";
 import theme from "../theme/theme";
 
 const useStyles = makeStyles({
+  root: {
+    '& .MuiDataGrid-columnHeaderWrapper': {
+      backgroundColor: '#F4F8F9',
+    },
+    // '$ .MuiDataGrid-iconSeparator': {
+    //   backgroundColor: '#F4F8F9',
+    // },
+  },
   mainSection: {
     margin: theme.spacing(3),
     padding: theme.spacing(2),
-    '$ .MuiDataGrid-columnHeaderTitle': {
-      backgroundColor: '#3EBFBF',
-    },
     borderRadius: "8px",
 
   },
@@ -60,7 +65,15 @@ const Products = () => {
     { field: "stock", headerName: "STOCK", width: 120 },
     { field: "price", headerName: "PRICE", width: 114 },
     { field: "status", headerName: "STATUS", width: 130 },
-    { field: "views", headerName: "VIEWS",  width: 130 },
+    { field: "views", headerName: "VIEWS", width: 130 },
+    // { 
+    //   field: "other",
+    //   headerName: "OTHER",  
+    //   width: 130,
+    //   renderCell: (params) => (
+    //     <Link to="/">{params.value}</Link>
+    //   ) 
+    // },
   ];
 
   return (
@@ -87,11 +100,12 @@ const Products = () => {
                 width: "100%", 
                 border: 0, 
                 paddingTop: "30px",
-                fontStyle: "bold" 
+                fontStyle: "bold",
                 }}
               rows={products}
               columns={columns}
               pageSize={5}
+              className={classes.root}
               rowsPerPageOptions={[5]}
               checkboxSelection
               elevation={0}
