@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     margin: theme.spacing(3),
     padding: theme.spacing(2),
     '$ .MuiDataGrid-columnHeaderTitle': {
-      backgroundColor: 'rgba(255, 7, 0, 0.55)',
+      backgroundColor: '#3EBFBF',
     },
     borderRadius: "8px",
 
@@ -53,14 +53,14 @@ const Products = () => {
   const classes = useStyles();
   const { data: products, isLoading, error } = useFetch("/products");
   const columns = [
-    { field: "name", headerName: "PRODUCT TYPE", width: 172},
-    { field: "code", headerName: "CODE",  width: 90},
+    { field: "name", headerName: "PRODUCT TYPE", width: 180},
+    { field: "code", headerName: "CODE",  width: 118},
     { field: "type", headerName: "TYPE", width: 108},
     { field: "date", headerName: "DATE", width: 108},
+    { field: "stock", headerName: "STOCK", width: 120 },
     { field: "price", headerName: "PRICE", width: 114 },
-    { field: "status", headerName: "STOCK", width: 120  },
-    { field: "code", headerName: "CODE", width: 130 },
-    { field: "views", headerName: "STATUS",  width: 130 },
+    { field: "status", headerName: "STATUS", width: 130 },
+    { field: "views", headerName: "VIEWS",  width: 130 },
   ];
 
   return (
