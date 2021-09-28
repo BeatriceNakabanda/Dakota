@@ -52,12 +52,12 @@ const Products = () => {
   const classes = useStyles();
   const { data: products, isLoading, error } = useFetch("/products");
   const columns = [
-    { field: "name", headerName: "NAME", width: 130},
-    { field: "code", headerName: "CODE",  width: 150},
-    { field: "type", headerName: "TYPE", width: 130},
-    { field: "date", headerName: "DATE", width: 130},
-    { field: "price", headerName: "PRICE", width: 120 },
-    { field: "status", headerName: "STATUS", width: 120  },
+    { field: "name", headerName: "PRODUCT TYPE", width: 172},
+    { field: "code", headerName: "CODE",  width: 90},
+    { field: "type", headerName: "TYPE", width: 108},
+    { field: "date", headerName: "DATE", width: 108},
+    { field: "price", headerName: "PRICE", width: 114 },
+    { field: "status", headerName: "STOCK", width: 120  },
     { field: "code", headerName: "CODE", width: 130 },
     { field: "views", headerName: "STATUS",  width: 130 },
   ];
