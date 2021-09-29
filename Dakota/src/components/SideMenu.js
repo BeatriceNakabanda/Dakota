@@ -1,10 +1,7 @@
 import {
   makeStyles,
   Grid,
-  List,
   ListItem,
-  ListItemIcon,
-  ListItemText,
   Link,
   Drawer,
 } from "@material-ui/core";
@@ -34,29 +31,22 @@ const useStyles = makeStyles({
     backgroundColor: "#FFF",
     fontSize: "18px",
     flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          width: "250px",
-          boxSizing: "border-box",
-        },
-  },
-  container: {
-    // "$ .MuiListItemIcon-root": {
-    //   paddingLeft: "20px",
-    //   backgroundColor: "red",
-    // },
-    "$ .MuiPaper-elevation0": {
-        paddingBottom: "0px",
-        marginBottom: "0px"
-    }
+    "& .MuiDrawer-paper": {
+        width: "250px",
+        boxSizing: "border-box",
+    },
   },
   links: {
     paddingTop: "30px",
   },
   link: {
-    // padding: "17px",
+    padding: "17px",
     color: "#7d7e80",
-    // display: "block",
+    fontSize: "15px",
+    display: "block",
+    textDecoration: "none"
   },
+ 
   logo: {
     paddingLeft: "0px",
     borderRadius: "50%",
@@ -69,29 +59,28 @@ const useStyles = makeStyles({
     paddingBottom: "25px",
   },
   label: {
-    paddingTop: "20px",
+    paddingTop: "25px",
     display: "flex",
     alignItems: "center"
   },
+  fas: {
+    // paddingRight: "15px",
+    marginRight: "15px",
+    fontSize: "18px"
+  }
 
 });
 
-const drawerWidth = 250;
 
 const SideMenu = () => {
   const classes = useStyles();
   return (
-    <div className={classes.sideMenu}>
-    <div>
+   
+    <Grid className={classes.sideMenu} container direction="column">
       <Drawer
         sx={{
           width: "250px",
           flexShrink: 0,
-        //   "& .MuiDrawer-paper": {
-        //     // width: "250px",
-        //     // boxSizing: "border-box",
-        //     // color: "red"
-        //   },
           "$ .MuiTypography-displayBlock": {
               fontSize: "12px",
               color: "red"
@@ -100,8 +89,7 @@ const SideMenu = () => {
         variant="permanent"
         anchor="left"
       >
-        <List>
-        <div>
+        <Grid item >
         <div className={classes.label}>
           <ListItem>
             <img
@@ -114,71 +102,55 @@ const SideMenu = () => {
             <h3 className={classes.title}>Dakota</h3>
           </ListItem>
           </div>
+          </Grid>
+          <Grid item >
           <div className={classes.links}>
-            <ListItem className={classes.link}>
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faHome} className="fas" />
-              </ListItemIcon>
-              <ListItemText primary="Dashboard" />
-            </ListItem>
-            <ListItem className={classes.link}>
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faArchive} className="fas" />
-              </ListItemIcon>
-              <ListItemText primary="Product" />
-            </ListItem>
-            <ListItem className={classes.link}>
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faExchangeAlt} className="fas" />
-              </ListItemIcon>
-              <ListItemText primary="Order" />
-            </ListItem>
-            <ListItem className={classes.link}>
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faCommentDots} className="fas" />
-              </ListItemIcon>
-              <ListItemText primary="Chat" />
-            </ListItem>
-            <ListItem className={classes.link}>
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faFile} className="fas" />
-              </ListItemIcon>
-              <ListItemText primary="Special Pages" />
-            </ListItem>
-            <ListItem className={classes.link}>
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faCopy} className="fas" />
-              </ListItemIcon>
-              <ListItemText primary="Documentation" />
-            </ListItem>
-            <ListItem className={classes.link}>
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faLayerGroup} className="fas" />
-              </ListItemIcon>
-              <ListItemText primary="Multilevel" />
-            </ListItem>
+          <Link className={classes.link} to="/">
+          <FontAwesomeIcon icon={faHome} className={classes.fas} />
+          Dashboard
+        </Link>
+        <Link className={classes.link} to="/">
+          <FontAwesomeIcon icon={faArchive} className={classes.fas} />
+           Product
+        </Link>
+        <Link className={classes.link} to="/">
+          <FontAwesomeIcon icon={faExchangeAlt} className={classes.fas} />
+          Order
+        </Link>
+        <Link className={classes.link} to="/">
+          <FontAwesomeIcon icon={faCommentDots} className={classes.fas} />
+          Chat
+        </Link>
+        <Link className={classes.link} to="/">
+          <FontAwesomeIcon icon={faFile} className={classes.fas} />
+          Special Pages
+        </Link>
+        <Link className={classes.link} to="/">
+          <FontAwesomeIcon icon={faCopy} className={classes.fas} />
+          Documentation
+        </Link>
+        <Link className={classes.link} to="/">
+          <FontAwesomeIcon icon={faLayerGroup} className={classes.fas} />
+          Multilevel
+        </Link>
           </div>
-          </div>
-        </List>
+          </Grid>     
+        <Grid item sm></Grid>
+        <Grid item >
         <div className={classes.linksFooter}>
-          <List>
-            <ListItem className={classes.link}>
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faCog} className="fas" />
-              </ListItemIcon>
-              <ListItemText primary="Settings" />
-            </ListItem>
-            <ListItem className={classes.link}>
-              <ListItemIcon>
-                <FontAwesomeIcon icon={faSignOutAlt} className="fas" />
-              </ListItemIcon>
-              <ListItemText primary="Logout" />
-            </ListItem>
-          </List>
+        <Link className={classes.link} to="/">
+          <FontAwesomeIcon icon={faCog} className={classes.fas} />
+          Settings
+        </Link>
+        <Link className={classes.link} to="/">
+          <FontAwesomeIcon icon={faSignOutAlt} className={classes.fas} />
+          Logout
+        </Link>
         </div>
-      </Drawer>
-    </div>
-    </div>
+        </Grid>   
+      </Drawer>  
+    </Grid>
+  
   );
 };
 
