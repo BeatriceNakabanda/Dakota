@@ -36,7 +36,11 @@ const useStyles = makeStyles({
     backgroundColor: "#FFF",
     color: "#a3a7a7",
     border:"#a3a7a7 1px solid",
-    marginRight: "10px"
+    marginRight: "10px",
+    '&:hover': {
+      color:" #3EBFBF",
+      border: "#3EBFBF 1px solid"
+    }
   },
   btn: {
     height: "40px",
@@ -45,7 +49,11 @@ const useStyles = makeStyles({
     color: "white",
     padding: "7px 14px",
     cursor: "pointer",
-    border: "#3EBFBF 1px solid"
+    border: "#3EBFBF 1px solid",
+    '&:hover': {
+      backgroundColor: "#E4F4F4",
+      color: "#3EBFBF"
+    }
   },
   title: {
     fontSize: "15px",

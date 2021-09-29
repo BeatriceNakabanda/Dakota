@@ -40,11 +40,16 @@ const useStyles = makeStyles({
     paddingTop: "30px",
   },
   link: {
-    padding: "17px",
+    padding: "14px",
     color: "#7d7e80",
     fontSize: "15px",
     display: "block",
-    textDecoration: "none"
+    marginTop: "5px",
+    '&:hover': {
+      textDecoration: "none",
+      borderRight: "3px solid #82DCDD",
+      color: "#82DCDD"
+    }
   },
  
   logo: {
@@ -64,7 +69,6 @@ const useStyles = makeStyles({
     alignItems: "center"
   },
   fas: {
-    // paddingRight: "15px",
     marginRight: "15px",
     fontSize: "18px"
   }
