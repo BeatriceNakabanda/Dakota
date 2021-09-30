@@ -1,19 +1,22 @@
-import { Box, Grid, Paper, Link } from "@material-ui/core";
-import { DataGrid } from "@material-ui/data-grid";
-import { styled, makeStyles } from "@material-ui/styles";
+import { Box, Paper} from "@material-ui/core";
+import { DataGrid, GridColDef } from "@material-ui/data-grid";
+import { makeStyles } from "@material-ui/styles";
 import useFetch from "../ui/useFetch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faSortAmountDown } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faSortAmountDown, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import theme from "../theme/theme";
+import product_pic from "../img/furniture.jpg";
 
 const useStyles = makeStyles({
   root: {
     '& .MuiDataGrid-columnHeaderWrapper': {
       backgroundColor: '#F4F8F9',
     },
-    // '$ .MuiDataGrid-iconSeparator': {
-    //   backgroundColor: '#F4F8F9',
-    // },
+    '& .MuiDataGrid-columnHeaderTitle': {
+      fontStyle: "bold",
+      color:" #000",
+      fontFamily: "sans-serif"
+    }
   },
   mainSection: {
     margin: theme.spacing(3),
@@ -59,29 +62,55 @@ const useStyles = makeStyles({
     fontSize: "15px",
     color: "#505253"
   },
+  productImage: {
+    borderRadius: "5px"
+  }
  
 });
 
 const Products = () => {
   const classes = useStyles();
   const { data: products, isLoading, error } = useFetch("/products");
+
+  function getFullStatus(params){
+    return `
+    ${params.getValue(params.id, 'status') || ''}  ${
+      params.getValue(params.id, 'views') || ''
+    }`;
+  }
+
+  
   const columns = [
-    { field: "name", headerName: "PRODUCT TYPE", width: 180},
+    { 
+      field: "image", 
+      headerName: "IMAGE",
+      width: 120, 
+      renderCell: () => (
+        <img className={classes.productImage} src={product_pic} alt="" width="50dp" height="50dp" />
+      )
+  },
+
+  { field: "name", headerName: "PRODUCT TYPE", width: 200},
     { field: "code", headerName: "CODE",  width: 118},
-    { field: "type", headerName: "TYPE", width: 108},
+    { field: "type", headerName: "TYPE", width: 120},
     { field: "date", headerName: "DATE", width: 108},
     { field: "stock", headerName: "STOCK", width: 120 },
     { field: "price", headerName: "PRICE", width: 114 },
-    { field: "status", headerName: "STATUS", width: 130 },
-    { field: "views", headerName: "VIEWS", width: 130 },
-    // { 
-    //   field: "other",
-    //   headerName: "OTHER",  
-    //   width: 130,
-    //   renderCell: (params) => (
-    //     <Link to="/">{params.value}</Link>
-    //   ) 
-    // },
+    // { field: "status", headerName: "STATUS", width: 130 },
+    // { field: "views", headerName: "VIEWS", width: 130 },
+    { 
+      field: "viewsStatus", 
+      headerName: "STATUS", 
+      width: 180,
+      valueGetter: getFullStatus, sortComparator: (v1, v2) =>
+      v1.toString().localeCompare(v2.toString()),
+      renderCell: (params) => (
+
+        <>
+        <p>{params.getValue(params.id, 'status'  || '')}</p> {params.getValue(params.id, 'views'  || '')}
+        </>
+      )
+    }
   ];
 
   return (

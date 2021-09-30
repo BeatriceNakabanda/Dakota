@@ -8,7 +8,7 @@
             "stock": "15",
             "price": "$350",
             "status": "Active",
-            "views": "3k views in a day",
+            "views": " 3k views in a day",
             "id": 1
         },
         {
@@ -19,7 +19,7 @@
             "stock": "15",
             "price": "$350",
             "status": "Disable",
-            "views": "-",
+            "views": " -",
             "id": 2
         },
         {
@@ -30,7 +30,7 @@
             "stock": "100",
             "price": "$400",
             "status": "Active",
-            "views": "5.2k views in a day",
+            "views": " 5.2k views in a day",
             "id": 3
         },
         {
@@ -41,7 +41,7 @@
             "stock": "20",
             "price": "$132",
             "status": "Disable",
-            "views": "-",
+            "views": " -",
             "id": 4
         },
         {
@@ -52,7 +52,7 @@
             "stock": "20",
             "price": "$132",
             "status": "Active",
-            "views": "2k views in a day",
+            "views": " 2k views in a day",
             "id": 5
         },
         {
@@ -63,7 +63,7 @@
             "stock": "20",
             "price": "$132",
             "status": "Disable",
-            "views": "-",
+            "views": " -",
             "id": 4
         }
 

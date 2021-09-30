@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     position: "absolute",
     left: "0px",
     width: "250px",
-    height: "100%",
+    height: "100vh",
     backgroundColor: "#FFF",
     fontSize: "18px",
     flexShrink: 0,
@@ -37,12 +37,12 @@ const useStyles = makeStyles({
     },
   },
   links: {
-    paddingTop: "30px",
+    paddingTop: "0px",
   },
   link: {
     padding: "14px",
     color: "#7d7e80",
-    fontSize: "15px",
+    fontSize: "13px",
     display: "block",
     marginTop: "5px",
     '&:hover': {
@@ -61,7 +61,7 @@ const useStyles = makeStyles({
     color: "#3a5f79",
   },
   linksFooter: {
-    paddingBottom: "25px",
+    paddingBottom: "0px",
   },
   label: {
     paddingTop: "25px",
